@@ -1,1 +1,9 @@
-<h1>Shifts</h1>
+@extends('app')
+
+@section('title', 'シフト申請')
+
+@include('nav')
+
+@section('content')
+
+＠endsection

@@ -1,7 +1,32 @@
+@extends('app')
 
-<h1>Times</h1>
-<h2>ここにCarbonで作成したボタンを設置をする</h2>
+@section('title', '打刻')
 
+@section('content')
+<!--打刻終了ボタン-->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">打刻する際はこちら</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">打刻</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">仕事が終わる際はこちら</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">終了</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>打刻・終了履歴</h2>
 <!--打刻した時間を-->
 <table class="table table-bordered">
    <!--項目-->
@@ -31,5 +56,5 @@
       <td>18:00</td>
     </tr>
   </tbody>
-
 </table>
+@endsection
