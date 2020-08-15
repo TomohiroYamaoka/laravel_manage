@@ -1,1 +1,7 @@
-<h1>Absent</h1>
+@extends('app')
+
+@section('title', '欠勤連絡')
+
+@include('nav')
+
+@section('content')
