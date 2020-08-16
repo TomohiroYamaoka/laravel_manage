@@ -10,27 +10,26 @@
       <div class="card-body">
         <h5 class="card-title">打刻する際はこちら</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <!--<a href="#" class="btn btn-primary">打刻</a>
+        <a href="#" class="btn btn-primary">打刻</a>
         <form action="{{ route('timestamp/punchin') }}" method="POST">
         @csrf
         @method('POST')
         <button type="submit" class="btn btn-primary">打刻</button>
         </form> 
-        -->
       </div>
     </div>
   </div>
+
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">仕事が終わる際はこちら</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <!--<form action="{{ route('timestamp/punchout') }}" method="POST">
+        <form action="{{ route('timestamp/punchout') }}" method="POST">
         @csrf
         @method('POST')
         <button type="submit" class="btn btn-primary">終了</button>
         </form> 
-        -->
       </div>
     </div>
   </div>
@@ -51,20 +50,13 @@
 　　</thead>
 
   <tbody>
+    @foreach($timestamps as $timestamp)
     <!--1行を繰り返す-->
     <tr>
-      <th scope="row">1</th>
+      <th scope="row"></th>
       <td>12/15</td>
-      <td>9:00</td>
-      <td>17:00</td>
-    </tr>
-
-    <!--1行を繰り返す-->
-    <tr>
-      <th scope="row">2</th>
-      <td>12/16</td>
-      <td>9:15</td>
-      <td>18:00</td>
+      <td>{{ $timestamp->punchIn }}</td>
+      <td>{{ $timestamp->punchOut }}</td>
     </tr>
   </tbody>
 </table>
