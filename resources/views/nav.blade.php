@@ -6,7 +6,10 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-link active" href="/mypage">マイページ <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="#">ログアウト</a>
+      <a class="nav-link">ログアウト</a>
+      <form id="logout-button" method="POST" action="{{ route('logout') }}">
+        @csrf
+      </form>
     </div>
   </div>
 </nav>
