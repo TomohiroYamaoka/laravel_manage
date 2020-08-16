@@ -15,12 +15,11 @@ class CreateTimestampsTable extends Migration
     {
         Schema::create('timestamps', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('login_id')->unsigned()->index();
+            $table->dropColumn('name');
+            $table->integer('user_id')->unsigned()->index();
             $table->dateTime('punchIn');
-            $table->dateTime('punchOut');
+            $table->dateTime('punchOut')->nullable();
             $table->timestamps();
-
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

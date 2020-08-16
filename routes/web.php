@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','TimestampsController@punchIn');
+//最初のログイン画面
+Route::get('/','TimestampsController@index');
 Auth::routes();
 
+//ページ遷移のルーティング
 Route::get('/mypage','TimestampsController@MoveMypage');
 Route::get('/times','TimestampsController@OrderTimes');
 Route::get('/shift','TimestampsController@OrderShifts');
 Route::get('/absent','TimestampsController@OrderAbsent');
 
-
-//Route::get('/home', 'HomeController@index')->name('home');
+//打刻ボタン、終了ボタンを押した時のルーティング
+//Route::post('punchin','TimeController@punchIn')->name('timestamp/punchin');
+//Route::post('punchout','TimeController@punchOut')->name('timestamp/punchout');
