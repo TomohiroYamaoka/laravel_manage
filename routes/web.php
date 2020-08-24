@@ -32,7 +32,7 @@ Route::get('/absent','TimestampsController@OrderAbsent');
 //打刻ボタン、終了ボタンを押した時のルーティング
 Route::group(['middleware'=>'auth'],function(){
     Route::post('timestamp/punchin','TimestampsController@punchIn')->name('timestamp/punchin');
-//   Route::post('/punchout','TimeController@punchOut')->name('timestamp/punchout');
+    Route::post('timestamp/punchout','TimestampsController@punchOut')->name('timestamp/punchout');
 });
 
 //マイページでの画像アップロード機能
