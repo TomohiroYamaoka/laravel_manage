@@ -8,7 +8,7 @@
       <div class="card-body">
         <h5 class="card-title">打刻する際はこちら</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <form action="" method="POST">
+        <form action="{{'timestamp/punchin'}}" method="POST">
         @csrf
         @method('POST')
         <button type="submit" class="btn btn-primary">打刻</button>

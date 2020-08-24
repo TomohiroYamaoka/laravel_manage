@@ -7,7 +7,9 @@
 @section('content')
   <!--メイン画面-->
   <div class="jumbotron">
-      <h2 class="display-4">お疲れ様です！{{ Auth::user()->name }}さん！</h2>
+      <h2 class="display-4">お疲れ様です！
+      {{ Auth::user()->name ?? '' }}さん！
+      </h2>
       <p class="lead">今日は△△時から、出勤日ですね。頑張りましょう。</p>
       <hr class="my-4">
       <a class="btn btn-primary btn-lg " href="/mypage" role="button">マイページはこちら</a>
