@@ -1,5 +1,7 @@
 @extends('app')
 
+@include('nav')
+
 @section('content')
 <!--打刻終了ボタン-->
 <div class="row">
