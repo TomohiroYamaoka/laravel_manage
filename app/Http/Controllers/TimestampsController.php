@@ -63,12 +63,16 @@ class TimestampsController extends Controller
         //Userテーブルのuseridに、最新のものを取得し、$timestampに代入をする。
         $timestamp=Timestamp::where('user_id',$user->id)->latest()->first();
 
+        //punchOutにすでに記載されている場合、エラーをだす。
+        if( !empty($timestamp->punchOut)){
+            return redirect()->back()->with('error','すでに打刻されてます。');
+        }        
         //$timestampのpunchOutカラムに、Carbonowで取得をした時刻をDBに入れる。
         $timestamp->update([
             'punchOut'=> Carbon::now()
         ]);
 
-        return redirect()->back()->with('my_status', '終了');
+        return redirect()->back()->with('my_status', '打刻完了しました');
     }
 }
 
