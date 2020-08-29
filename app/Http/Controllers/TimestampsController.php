@@ -53,17 +53,22 @@ class TimestampsController extends Controller
         $newTimestampDay = Carbon::today();
         return redirect()->back()->with('my_status', '出勤打刻が完了しました');}
     }
-    /*退勤時
+    
+    //退勤時
     public function punchOut()
     {
+        //Userテーブルを$userに代入をする。
         $user=Auth::user();
+
+        //Userテーブルのuseridに、最新のものを取得し、$timestampに代入をする。
         $timestamp=Timestamp::where('user_id',$user->id)->latest()->first();
 
+        //$timestampのpunchOutカラムに、Carbonowで取得をした時刻をDBに入れる。
         $timestamp->update([
             'punchOut'=> Carbon::now()
         ]);
-        return redirect()->back()->with('my_status', '終了');}
+
+        return redirect()->back()->with('my_status', '終了');
     }
-    */
 }
 
