@@ -24,13 +24,17 @@ Route::post('/login','Auth\LoginController@login')->name('name');
 Route::post('/logout','Auth\LoginController@logout')->name('logout');
 
 //ページ遷移のルーティング
-Route::get('/mypage','TimestampsController@MoveMypage');
+Route::get('/mypage/{id}','TimestampsController@MoveMypage');
 Route::get('/times','TimestampsController@OrderTimes');
 Route::get('/shift','TimestampsController@OrderShifts');
 Route::get('/absent','TimestampsController@OrderAbsent');
 
+
+
 //打刻ボタン、終了ボタンを押した時のルーティング
 Route::group(['middleware'=>'auth'],function(){
+    Route::get('mypage','TimestampsController@MoveMypage')->name('users/mypage');
+    Route::get('mypage/edit/{id}','TimestampsController@editMypage')->name('users/edit');
     Route::post('timestamp/punchin','TimestampsController@punchIn')->name('timestamp/punchin');
     Route::post('timestamp/punchout','TimestampsController@punchOut')->name('timestamp/punchout');
 });
