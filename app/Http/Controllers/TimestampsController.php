@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;;
+use Auth;
 use Carbon\Carbon;
 use App\User;
 use App\Timestamp;
@@ -73,6 +73,11 @@ class TimestampsController extends Controller
         ]);
 
         return redirect()->back()->with('my_status', '打刻完了しました');
+    }
+
+    public function editMypage($id){
+        $user=Auth::user()->$id;
+        return view('users.edit');
     }
 }
 

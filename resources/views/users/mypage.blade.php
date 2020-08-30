@@ -23,3 +23,8 @@
   </ul>
 </div>
 
+<div class="edit-cartd">
+<a href="/mypage/edit/{id}">
+<span>マイページを編集する</span>
+</div>
+
